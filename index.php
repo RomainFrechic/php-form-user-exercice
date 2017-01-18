@@ -1,9 +1,11 @@
 <?php 
-
 require('user.php');
-$client1 = new Client('id','@','date');
+
+
+$date= date('d/m/y',time());
+$client1 = new Client('id','@',$date);
 //var_dump($client1);
-$client2 = new Client('id','@','date');
+$client2 = new Client('id','@',$date);
 //var_dump($client1);
 return [
 $client1,

@@ -9,9 +9,9 @@ class User{
 	private $date;
 
 	public function __construct($id,$email,$date){
-		$this->id=$id;
-		$this->email=$email;
-		$this->date=$date;
+		$this->id($id);
+		$this->email($email);
+		$this->date($date);
 	}
 
 	public function getID(){

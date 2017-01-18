@@ -14,10 +14,14 @@ $pageUser=require('index.php');
 	
 	<?php 
     
-	foreach ($pageUser as $value) {
-		var_dump( $value);
+	foreach ($pageUser as $key => $value) {
+		print_r($key);
+		print_r($value);
+		return;
 	}
+	
 
+	
    
 	?>
 </body>
