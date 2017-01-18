@@ -7,7 +7,8 @@ class Vegetable extends Product{
 	private $harvestedAt;
 	
 
-	public function __construct($productorName,$harvestedAt){
+	public function __construct($id,$name,$price,$productorName,$harvestedAt){
+		parent::__construct($id,$name,$price);
 		$this->productorNa=$productorName;
 		$this->harvestedA=$harvestedAt;
 		
