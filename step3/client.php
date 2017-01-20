@@ -28,9 +28,4 @@ class Client extends Product{
 }
 
 
-$val = new Client(3,5,5,'lalla','hipipihey','john');
-print_r($val);
-
-
-
  ?>

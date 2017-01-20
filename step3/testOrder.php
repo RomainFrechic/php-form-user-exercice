@@ -5,8 +5,12 @@ require_once('client.php');
 
 
 
-$val = new Client(3,5,5,'lalla','hipipihey','john');
-print_r($val);
+$clientOne = new Client(1,Polo,3,'tomate',3,3);
+print_r($clientOne);
+
+$clientTwo = new Client(2,Sophie,5,'courgette',5,5);
+print_r($clientTwo);
+
 
 
 
