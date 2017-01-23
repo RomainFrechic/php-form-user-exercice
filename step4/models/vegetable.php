@@ -9,8 +9,8 @@ class Vegetable extends Product{
 
 	public function __construct($id,$name,$price,$productorName,$harvestedAt){
 		parent::__construct($id,$name,$price);
-		$this->productorNa=$productorName;
-		$this->harvestedA=$harvestedAt;
+		$this->productorName=$productorName;
+		$this->harvestedAt=$harvestedAt;
 		
 	}
 
@@ -25,7 +25,7 @@ class Vegetable extends Product{
 
 	public function isFresh($name){
 		if($name<24){
-             return true;
+			return true;
 		}else{
 			return false;
 		}
@@ -35,4 +35,4 @@ class Vegetable extends Product{
 
 
 
- ?>
+?>
