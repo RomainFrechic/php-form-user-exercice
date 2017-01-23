@@ -9,12 +9,20 @@ class Client extends Product{
 		parent::__construct($id,$name,$price);
    		$this->buy=$buy;
    		$this->cart=$cart;
-   		$this->billAmount=$billAmount;		
+   		$this->billAmount=$billAmount;	
+   		$this->product = [
+           ["product"=>new product("radis",5), "quantite"=>2],
+   		];	
 	}
 
 
 	public function getBuy(){
-		return $this->buy;
+		$total=0;
+		foreach ($this->$user as $value) {
+		$total += $value['name']->getPrice()*$value['id'];
+		}
+		//return $total;
+var_dump($total);
 	}
 
 	public function getBillAmount(){
@@ -27,5 +35,6 @@ class Client extends Product{
  
 }
 
+ 
 
  ?>

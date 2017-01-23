@@ -31,21 +31,21 @@ $user=require_once('products.php');
 				foreach ($user as $key => $user):
 					?>
 				<tr>
-					<td><?php echo $user->getID(); ?></td>
+					  <td><?php echo $user->getID(); ?></td>
 					<td><?php echo $user->getName(); ?></td>
-					<td><?php echo $user->getPrice(); ?></td>
-
-					<?php if(is_a($user,'Vegetable')): ?>
+					<td><?php echo $user->getPrice(); ?></td>  
+					 <?php if(is_a($user,'Vegetable')): ?>
 					<td><?php echo $user->getProductorName(); ?></td>
 					<td><?php echo $user->getharvestedAt(); ?></td>
 				<?php else: ?>
 					<td><?php echo  $user->getBrand(); ?></td>
                  <?php endif ?>
-				</tr>
+				</tr> 
                  
 			<?php endforeach ?>
 		</tbody>
 	</table>
+	<h2><?php echo $total ?></h2>
 </div>
 
 </body>
