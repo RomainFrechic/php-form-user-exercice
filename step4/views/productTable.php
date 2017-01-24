@@ -23,7 +23,7 @@ $user=require_once(__DIR__.'/../data/products.php');
 					<th>Price</th>
 					<th>Brand/Producteur</th>
 					<th>Recolte</th>
-					
+
 				</tr>	
 			</thead>
 			<tbody>
@@ -33,7 +33,7 @@ $user=require_once(__DIR__.'/../data/products.php');
 				<tr>
 					<td><?php echo $user->getID(); ?></td>
 					<td><?php echo $user->getName(); ?></td>
-					<td><?php echo $user->getPrice(); ?></td>  
+					<td><?php echo $user->getPrice()."€"; ?></td>  
 					<?php if(is_a($user,'Vegetable')): ?>
 						<td><?php echo $user->getProductorName(); ?></td>
 						<td><?php echo $user->getharvestedAt(); ?></td>
@@ -41,7 +41,7 @@ $user=require_once(__DIR__.'/../data/products.php');
 						<td><?php echo  $user->getBrand(); ?></td>
 					<?php endif ?>
 				</tr> 
-				
+
 			<?php endforeach ?>
 		</tbody>
 	</table>

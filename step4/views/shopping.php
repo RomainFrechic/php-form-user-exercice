@@ -21,7 +21,9 @@ $produits = require_once(__DIR__.'/../data/products.php');
 			<div>
 				<select name="select0">
 					<?php foreach ($customers as $client): ?>
-						<option value="<?php echo $client->getID(); ?>"><?php echo $client->getName(); ?></option>
+						<option value="<?php echo $client->getID();?>">
+							<?php echo $client->getName(); ?>	
+						</option>
 					<?php endforeach ?>
 				</select>
 			</div>
@@ -29,7 +31,11 @@ $produits = require_once(__DIR__.'/../data/products.php');
 			<div>
 				<select name="select1">
 					<?php foreach ($produits as $produit): ?>
-						<option value="<?php echo $produit->getID(); ?>"><?php echo $produit->getName(); ?></option>
+						<option value="<?php echo $produit->getID();?>">
+							<?php echo $produit->getName() . '<div> </div>'. 
+							$produit->getPrice() . '€';
+							 ?>
+						</option>
 					<?php endforeach ?>
 				</select>
 			</div>
@@ -37,7 +43,11 @@ $produits = require_once(__DIR__.'/../data/products.php');
 			<div>
 				<select name="select2">
 					<?php foreach ($produits as $produit): ?>
-						<option value="<?php echo $produit->getID(); ?>"><?php echo $produit->getName(); ?></option>
+						<option value="<?php echo $produit->getID();?>">
+							<?php echo $produit->getName() . '<div> </div>'. 
+							$produit->getPrice() . '€';
+							 ?>
+						</option>
 					<?php endforeach ?>
 				</select>
 			</div>
@@ -45,7 +55,11 @@ $produits = require_once(__DIR__.'/../data/products.php');
 			<div>
 				<select name="select3">
 					<?php foreach ($produits as $produit): ?>
-						<option value="<?php echo $produit->getID(); ?>"><?php echo $produit->getName(); ?></option>
+						<option value="<?php echo $produit->getID();?>">
+							<?php echo $produit->getName() .'<div> </div>'. 
+							$produit->getPrice() . '€';
+							?>
+						</option>
 					<?php endforeach ?>
 				</select>
 			</div>
@@ -55,10 +69,40 @@ $produits = require_once(__DIR__.'/../data/products.php');
 
 		</form>
 	</div>
-	<h3><?php echo $_POST['select0']; ?></h3>
-	<h3><?php echo $_POST['select1']; ?></h3>
-	<h3><?php echo $_POST['select2']; ?></h3>
-	<h3><?php echo $_POST['select3']; ?></h3>
+	
+	<?php 
+	$idClient = $_POST['select0'];
+	foreach ($customers as $client) { 
+		if ($client->getID() == $idClient) {
+			$currentClient = $client;
+		}
+	}
+
+	foreach ($produits as $produit) {
+		if ($produit->getID() == $_POST['select1']){
+			$currentClient->buy($produit);
+		}
+	}
+
+	foreach ($produits as $produit) {
+		if ($produit->getID() == $_POST['select2']){
+			$currentClient->buy($produit);
+		}
+	}
+
+	foreach ($produits as $produit) {
+		if ($produit->getID() == $_POST['select3']){
+			$currentClient->buy($produit);
+		}
+	}
+	
+	print_r($currentClient->getCart());
+	echo 'TOTAL :' . $currentClient->getBillAmount() . '€'; 
+
+
+
+	?>
+
 </body>
 </html>
 

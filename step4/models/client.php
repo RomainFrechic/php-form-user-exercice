@@ -1,21 +1,20 @@
 <?php 
 require_once('product.php');
 class Client extends Product{
-	private $buy;
 	private $billAmount;
 	private $cart = [];
 
 	public function __construct($id,$name,$price,$buy,$cart,$billAmount){
 		parent::__construct($id,$name,$price);
-		$this->buy=$buy;
+		//$this->buy=$buy;
 		$this->cart=$cart;
-		$this->billAmount=$billAmount;	
+		$this->billAmount;	
 		
 	}
 
 
-	public function getBuy(){
-		$this->getCart($product);
+	public function buy($product){
+		$this->addProductToCart($product);
 		$this->setBillAmount($product);
 	}
 
@@ -29,8 +28,12 @@ class Client extends Product{
 	}
 	
 	
-	public function getCart($product){
+	public function addProductToCart($product){
 		$this->cart[]=$product;
+	}
+
+	public function getCart() {
+		return $this->cart;
 	}
 	
 }
